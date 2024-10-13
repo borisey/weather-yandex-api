@@ -30,8 +30,8 @@ public class Main {
                 JsonStructure jsonStructure = reader.read();
                 if (jsonStructure.getValueType() == JsonValue.ValueType.OBJECT) {
                     JsonObject jsonObject = (JsonObject) jsonStructure;
-                    String name = jsonObject.getString("now_dt");
-                    System.out.println("Temperature: " + name);
+                    int fact = jsonObject.getInt("now");
+                    System.out.println("Temperature: " + fact);
                 }
             }
         }
