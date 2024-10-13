@@ -1,8 +1,11 @@
 package org.example;
+
+import java.io.StringReader;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import javax.json.*;
 
 public class Main {
     static final Float LAT      = 55.75F;
@@ -21,6 +24,16 @@ public class Main {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println("Response Code: " + response.statusCode());
             System.out.println("Response Body: " + response.body());
+
+            String jsonString = response.body();
+            try (JsonReader reader = Json.createReader(new StringReader(jsonString))) {
+                JsonStructure jsonStructure = reader.read();
+                if (jsonStructure.getValueType() == JsonValue.ValueType.OBJECT) {
+                    JsonObject jsonObject = (JsonObject) jsonStructure;
+                    String name = jsonObject.getString("now_dt");
+                    System.out.println("Temperature: " + name);
+                }
+            }
         }
 
         catch (Exception e) {
