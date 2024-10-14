@@ -1,13 +1,13 @@
 package org.example;
 
 public class Fact {
-    private float temp;
+    private int temp;
 
-    public float getTemp() {
+    public int getTemp() {
         return temp;
     }
 
-    public void setTemp(float temp) {
+    public void setTemp(int temp) {
         this.temp = temp;
     }
 }
