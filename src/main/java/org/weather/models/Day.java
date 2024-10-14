@@ -1,4 +1,4 @@
-package org.example.models;
+package org.weather.models;
 
 public class Day {
     private int temp_avg;

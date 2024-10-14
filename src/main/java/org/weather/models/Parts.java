@@ -1,4 +1,4 @@
-package org.example.models;
+package org.weather.models;
 
 public class Parts {
     private Day day;

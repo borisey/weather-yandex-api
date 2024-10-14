@@ -1,8 +1,8 @@
-package org.example.services;
+package org.weather.services;
 
-import org.example.models.Forecasts;
-import org.example.models.Parts;
-import org.example.models.Root;
+import org.weather.models.Forecasts;
+import org.weather.models.Parts;
+import org.weather.models.Root;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;

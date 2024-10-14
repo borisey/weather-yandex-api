@@ -1,8 +1,8 @@
-package org.example;
+package org.weather;
 
-import org.example.models.Root;
-import org.example.parsers.GsonParser;
-import org.example.services.WeatherService;
+import org.weather.models.Root;
+import org.weather.parsers.GsonParser;
+import org.weather.services.WeatherService;
 
 public class Main {
     public static void main(String[] args) {
