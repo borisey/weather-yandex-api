@@ -18,6 +18,6 @@ public class Main {
 
         System.out.println("Current temperature: " + root.getFact().getTemp());
 
-        System.out.println("Average temperature for " + weeksLimit + " weeks: ");
+        System.out.println("Average temperature for " + weeksLimit + " weeks: " + root.getForecasts());
     }
 }
