@@ -10,6 +10,6 @@ public class Main {
         GsonParser parser = new GsonParser();
         Root root = parser.parse(weatherJson);
 
-        System.out.println(root.getNow());
+        System.out.println(root.getFact().getTemp());
     }
 }
