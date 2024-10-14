@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.models.Root;
+import org.example.parsers.GsonParser;
 import org.example.services.WeatherService;
 
 public class Main {

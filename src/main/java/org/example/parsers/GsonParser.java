@@ -1,4 +1,4 @@
-package org.example;
+package org.example.parsers;
 
 import com.google.gson.Gson;
 import org.example.models.Root;
