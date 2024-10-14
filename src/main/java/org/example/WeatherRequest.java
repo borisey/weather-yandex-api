@@ -1,8 +1,8 @@
 package org.example;
 
-import org.example.model.Forecasts;
-import org.example.model.Parts;
-import org.example.model.Root;
+import org.example.models.Forecasts;
+import org.example.models.Parts;
+import org.example.models.Root;
 
 import java.net.URI;
 import java.net.http.HttpClient;
