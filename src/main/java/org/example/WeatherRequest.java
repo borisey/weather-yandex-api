@@ -48,14 +48,12 @@ public class WeatherRequest {
     public float getAverageTemperature(Root root) {
         List<Forecasts> forecasts = root.getForecasts();
         int allTemperatures = 0;
-        float averageTemperature = 0F;
 
         for (Forecasts forecast : forecasts) {
             Parts parts = forecast.getParts();
             allTemperatures += parts.getDay().getTempAvg();
-            averageTemperature = (float) allTemperatures / DAYS_LIMIT;
         }
 
-        return averageTemperature;
+        return (float) allTemperatures / DAYS_LIMIT;
     }
 }
