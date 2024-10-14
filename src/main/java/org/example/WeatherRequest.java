@@ -1,4 +1,4 @@
-package org.example.weather;
+package org.example;
 
 import java.net.URI;
 import java.net.http.HttpClient;

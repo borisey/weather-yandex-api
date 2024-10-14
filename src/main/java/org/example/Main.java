@@ -1,12 +1,10 @@
 package org.example;
 
-import org.example.weather.GsonParser;
-import org.example.weather.Root;
-import org.example.weather.WeatherRequest;
+import org.example.model.Root;
 
 public class Main {
     public static void main(String[] args) {
-        int weeksLimit = 5;
+        int weeksLimit = 1;
 
         WeatherRequest weatherRequest = new WeatherRequest();
         String weatherJson = weatherRequest.getWeather(weeksLimit);
@@ -18,6 +16,6 @@ public class Main {
 
         System.out.println("Current temperature: " + root.getFact().getTemp());
 
-        System.out.println("Average temperature for " + weeksLimit + " weeks: " + root.getForecasts());
+        System.out.println("Average temperature for " + weeksLimit + " weeks: ");
     }
 }

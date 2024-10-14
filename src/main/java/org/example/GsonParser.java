@@ -1,6 +1,7 @@
-package org.example.weather;
+package org.example;
 
 import com.google.gson.Gson;
+import org.example.model.Root;
 
 public class GsonParser {
     public Root parse(String weatherJson)
