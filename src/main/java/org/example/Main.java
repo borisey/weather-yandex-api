@@ -28,13 +28,13 @@ public class Main {
     }
 
     private static float getAverageTemperature(List<Forecasts> forecasts) {
-        int allTemps = 0;
+        int allTemperatures = 0;
         float averageTemperature = 0F;
 
         for (Forecasts forecast : forecasts) {
             Parts parts = forecast.getParts();
-            allTemps += parts.getDay().getTempAvg();
-            averageTemperature = (float) allTemps / DAYS_LIMIT;
+            allTemperatures += parts.getDay().getTempAvg();
+            averageTemperature = (float) allTemperatures / DAYS_LIMIT;
         }
 
         return averageTemperature;
