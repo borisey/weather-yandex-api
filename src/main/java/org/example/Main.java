@@ -17,5 +17,7 @@ public class Main {
         Root root = parser.parse(weatherJson);
 
         System.out.println("Current temperature: " + root.getFact().getTemp());
+
+        System.out.println("Average temperature for " + weeksLimit + " weeks: ");
     }
 }
