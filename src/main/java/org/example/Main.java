@@ -7,11 +7,11 @@ import org.example.model.Root;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        int weeksLimit = 5;
+    static final int DAYS_LIMIT = 5;
 
+    public static void main(String[] args) {
         WeatherRequest weatherRequest = new WeatherRequest();
-        String weatherJson = weatherRequest.getWeather(weeksLimit);
+        String weatherJson = weatherRequest.getWeather(DAYS_LIMIT);
 
         System.out.println("All data: " + weatherJson);
 
@@ -20,26 +20,24 @@ public class Main {
 
         System.out.println("Current temperature: " + root.getFact().getTemp());
 
-
         List<Forecasts> forecasts = root.getForecasts();
 
+        float averageTemperature = getAverageTemperature(forecasts);
+
+        System.out.println("Average temperature for next " + DAYS_LIMIT + " days: " + averageTemperature);
+    }
+
+    private static float getAverageTemperature(List<Forecasts> forecasts) {
         int allTemps = 0;
         float averageTemperature = 0F;
 
         for (var i = 0; i < forecasts.size(); i++) {
             Forecasts forecast = forecasts.get(i);
             Parts parts = forecast.getParts();
-
-            System.out.println(parts.getDay().getTempAvg());
-
             allTemps += parts.getDay().getTempAvg();
-            averageTemperature = (float) allTemps / weeksLimit;
+            averageTemperature = (float) allTemps / DAYS_LIMIT;
         }
 
-        System.out.println(allTemps);
-
-        System.out.println(averageTemperature);
-
-//        System.out.println("Average temperature for " + weeksLimit + " weeks: " + root.getForecasts());
+        return averageTemperature;
     }
 }
