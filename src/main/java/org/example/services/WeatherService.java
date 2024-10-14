@@ -12,7 +12,7 @@ import java.util.List;
 public class WeatherService {
     private static final Float LAT      = 55.75F;
     private static final Float LON      = 37.62F;
-    public static final int DAYS_LIMIT = 5;
+    public static final int DAYS_LIMIT  = 5;
     private static final String URL     = "https://api.weather.yandex.ru/v2/forecast?lat=" + LAT + "&lon=" + LON + "&limit=" + DAYS_LIMIT;
     private static final String API_KEY = "6c9d00db-7689-4b56-bbf1-026e2c0c12e3";
 
@@ -33,12 +33,6 @@ public class WeatherService {
         }
 
         return response.body();
-    }
-
-    public String getAllData() {
-        WeatherService weatherService = new WeatherService();
-
-        return weatherService.getWeather();
     }
 
     public int getCurrentTemperature(Root root) {
