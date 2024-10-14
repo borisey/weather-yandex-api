@@ -6,8 +6,7 @@ public class Root {
     private Fact fact;
     private List<Forecasts> forecasts;
 
-    public Fact getFact()
-    {
+    public Fact getFact() {
         return fact;
     }
 
@@ -15,8 +14,7 @@ public class Root {
         this.fact = fact;
     }
 
-    public List<Forecasts> getForecasts()
-    {
+    public List<Forecasts> getForecasts() {
         return forecasts;
     }
 

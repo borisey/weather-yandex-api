@@ -4,8 +4,7 @@ public class Forecasts {
     private String date;
     private Parts parts;
 
-    public Forecasts(String date, Parts parts)
-    {
+    public Forecasts(String date, Parts parts) {
         this.date = date;
         this.parts = parts;
     }
