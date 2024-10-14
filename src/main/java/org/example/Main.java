@@ -31,8 +31,7 @@ public class Main {
         int allTemps = 0;
         float averageTemperature = 0F;
 
-        for (var i = 0; i < forecasts.size(); i++) {
-            Forecasts forecast = forecasts.get(i);
+        for (Forecasts forecast : forecasts) {
             Parts parts = forecast.getParts();
             allTemps += parts.getDay().getTempAvg();
             averageTemperature = (float) allTemps / DAYS_LIMIT;
