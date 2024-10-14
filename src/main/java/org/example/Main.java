@@ -6,10 +6,10 @@ import org.example.weather.WeatherRequest;
 
 public class Main {
     public static void main(String[] args) {
-        int limit = 5;
+        int weeksLimit = 5;
 
         WeatherRequest weatherRequest = new WeatherRequest();
-        String weatherJson = weatherRequest.getWeather(limit);
+        String weatherJson = weatherRequest.getWeather(weeksLimit);
 
         System.out.println("All data: " + weatherJson);
 

@@ -11,10 +11,10 @@ public class WeatherRequest {
     static final String URL     = "https://api.weather.yandex.ru/v2/forecast?lat=" + LAT + "&lon=" + LON + "&limit=";
     static final String API_KEY = "6c9d00db-7689-4b56-bbf1-026e2c0c12e3";
 
-    public String getWeather(int limit) {
+    public String getWeather(int weeksLimit) {
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(URL + limit))
+                .uri(URI.create(URL + weeksLimit))
                 .header("X-Yandex-Weather-Key", API_KEY)
                 .GET()
                 .build();
