@@ -1,16 +1,17 @@
 package org.example;
 
 import org.example.models.Root;
+import org.example.services.WeatherService;
 
 public class Main {
     public static void main(String[] args) {
-        WeatherRequest weatherRequest = new WeatherRequest();
+        WeatherService weatherService = new WeatherService();
 
         GsonParser parser = new GsonParser();
-        Root root = parser.parse(weatherRequest.getAllData());
+        Root root = parser.parse(weatherService.getAllData());
 
-        System.out.println("All data: " + weatherRequest.getAllData());
-        System.out.println("Current temperature: " + weatherRequest.getCurrentTemperature(root));
-        System.out.println("Average temperature for next " + WeatherRequest.DAYS_LIMIT + " days: " + weatherRequest.getAverageTemperature(root));
+        System.out.println("All data: " + weatherService.getAllData());
+        System.out.println("Current temperature: " + weatherService.getCurrentTemperature(root));
+        System.out.println("Average temperature for next " + WeatherService.DAYS_LIMIT + " days: " + weatherService.getAverageTemperature(root));
     }
 }
