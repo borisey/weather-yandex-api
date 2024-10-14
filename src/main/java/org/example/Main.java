@@ -5,11 +5,11 @@ public class Main {
         Weather weather = new Weather();
         String weatherJson = weather.getWeather();
 
-        System.out.println(weatherJson);
+        System.out.println("All data: " + weatherJson);
 
         GsonParser parser = new GsonParser();
         Root root = parser.parse(weatherJson);
 
-        System.out.println(root.getFact().getTemp());
+        System.out.println("Temperature: " + root.getFact().getTemp());
     }
 }
