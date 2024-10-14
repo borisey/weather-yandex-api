@@ -1,4 +1,4 @@
-package org.example;
+package org.example.weather;
 
 public class Fact {
     private int temp;

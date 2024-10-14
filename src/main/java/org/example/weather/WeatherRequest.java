@@ -1,11 +1,11 @@
-package org.example;
+package org.example.weather;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Weather {
+public class WeatherRequest {
     static final Float LAT      = 55.75F;
     static final Float LON      = 37.62F;
     static final String URL     = "https://api.weather.yandex.ru/v2/forecast?lat=" + LAT + "&lon=" + LON + "&limit=";

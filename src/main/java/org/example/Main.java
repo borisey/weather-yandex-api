@@ -1,11 +1,15 @@
 package org.example;
 
+import org.example.weather.GsonParser;
+import org.example.weather.Root;
+import org.example.weather.WeatherRequest;
+
 public class Main {
     public static void main(String[] args) {
         int limit = 5;
 
-        Weather weather = new Weather();
-        String weatherJson = weather.getWeather(limit);
+        WeatherRequest weatherRequest = new WeatherRequest();
+        String weatherJson = weatherRequest.getWeather(limit);
 
         System.out.println("All data: " + weatherJson);
 

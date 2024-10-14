@@ -1,6 +1,4 @@
-package org.example;
-
-import java.util.List;
+package org.example.weather;
 
 public class Root {
     private int now;
