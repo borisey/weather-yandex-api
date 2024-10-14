@@ -10,24 +10,26 @@ public class Main {
     static final int DAYS_LIMIT = 5;
 
     public static void main(String[] args) {
-        WeatherRequest weatherRequest = new WeatherRequest();
-        String weatherJson = weatherRequest.getWeather(DAYS_LIMIT);
-
-        System.out.println("All data: " + weatherJson);
-
         GsonParser parser = new GsonParser();
-        Root root = parser.parse(weatherJson);
+        Root root = parser.parse(getAllData());
 
-        System.out.println("Current temperature: " + root.getFact().getTemp());
-
-        List<Forecasts> forecasts = root.getForecasts();
-
-        float averageTemperature = getAverageTemperature(forecasts);
-
-        System.out.println("Average temperature for next " + DAYS_LIMIT + " days: " + averageTemperature);
+        System.out.println("All data: " + getAllData());
+        System.out.println("Current temperature: " + getCurrentTemperature(root));
+        System.out.println("Average temperature for next " + DAYS_LIMIT + " days: " + getAverageTemperature(root));
     }
 
-    private static float getAverageTemperature(List<Forecasts> forecasts) {
+    private static String getAllData() {
+        WeatherRequest weatherRequest = new WeatherRequest();
+
+        return weatherRequest.getWeather(DAYS_LIMIT);
+    }
+
+    private static int getCurrentTemperature(Root root) {
+        return root.getFact().getTemp();
+    }
+
+    private static float getAverageTemperature(Root root) {
+        List<Forecasts> forecasts = root.getForecasts();
         int allTemperatures = 0;
         float averageTemperature = 0F;
 
