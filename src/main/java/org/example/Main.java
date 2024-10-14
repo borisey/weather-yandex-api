@@ -12,6 +12,6 @@ public class Main {
         GsonParser parser = new GsonParser();
         Root root = parser.parse(weatherJson);
 
-        System.out.println("Temperature: " + root.getFact().getTemp());
+        System.out.println("Current temperature: " + root.getFact().getTemp());
     }
 }
